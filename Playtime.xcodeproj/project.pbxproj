@@ -15,7 +15,7 @@
 		892E7DC71E8BEAA8002541AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892E7DC51E8BEAA8002541AD /* LaunchScreen.storyboard */; };
 		892E7DCF1E8BEDEA002541AD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E7DCE1E8BEDEA002541AD /* SecondViewController.swift */; };
 		892E7DD11E8BFE6F002541AD /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E7DD01E8BFE6F002541AD /* TableView.swift */; };
-		894D67A91E8C4DB00092C02F /* ownDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 894D67A81E8C4DB00092C02F /* ownDB.db */; };
+		894682D41E8E748D00AF980B /* ownDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 894682D31E8E748D00AF980B /* ownDB.db */; };
 		A1797C3B81B5D3361440ACB2 /* Pods_Playtime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D02880BA6CE4EEBD417E40F /* Pods_Playtime.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		892E7DC81E8BEAA8002541AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		892E7DCE1E8BEDEA002541AD /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		892E7DD01E8BFE6F002541AD /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		894D67A81E8C4DB00092C02F /* ownDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ownDB.db; sourceTree = "<group>"; };
+		894682D31E8E748D00AF980B /* ownDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ownDB.db; sourceTree = "<group>"; };
 		A64F1B0181211DE51D9488B4 /* Pods-Playtime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playtime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Playtime/Pods-Playtime.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +86,7 @@
 		894D67A71E8C3E3C0092C02F /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				894D67A81E8C4DB00092C02F /* ownDB.db */,
+				894682D31E8E748D00AF980B /* ownDB.db */,
 			);
 			name = Database;
 			path = Playtime;
@@ -174,7 +174,7 @@
 			files = (
 				892E7DC71E8BEAA8002541AD /* LaunchScreen.storyboard in Resources */,
 				892E7DC41E8BEAA8002541AD /* Assets.xcassets in Resources */,
-				894D67A91E8C4DB00092C02F /* ownDB.db in Resources */,
+				894682D41E8E748D00AF980B /* ownDB.db in Resources */,
 				892E7DC21E8BEAA8002541AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9V6J6R5YFL;
 				INFOPLIST_FILE = Playtime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.ad.Playtime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -378,6 +379,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9V6J6R5YFL;
 				INFOPLIST_FILE = Playtime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.ad.Playtime;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -21,9 +21,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewOutlet.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as UITableViewCell
-        
-//        let zitate = zitat[indexPath.row] as String
-//        var content = db.getAll()
         let contentTable = content[indexPath.row] as String
         cell.textLabel!.text = contentTable
         return cell
@@ -37,16 +34,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource
         return true
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete
-//        {
-//            zitat.remove(at: indexPath.row)
-//            tableViewOutlet.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
-//        } else if editingStyle == .insert
-//        {
-//        
-//        }
-//    }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let update = UITableViewRowAction(style: .normal, title: "Update") { action, index in

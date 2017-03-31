@@ -15,37 +15,43 @@ class database{
     let id = Expression<Int64>("id")
     let content = Expression<String?>("content")
     
-    let db = try! Connection("/Users/duc/Application Develop/Playtime/Playtime/ownDB.db")
+    let db: Connection
+    let path: String
     
     var contentForTable = [String]()
+
+    //init database and create table if there isn't a table ownTable exist
+    init() {
+        path = NSSearchPathForDirectoriesInDomains(
+            .documentDirectory, .userDomainMask, true
+            ).first!
+        print("Path: \(path)")
+        db = try! Connection("\(path)/ownDB.db")
+        do{
+            try db.run(dbIntern.create { t in
+                t.column(id, primaryKey: true)
+                t.column(content, unique: true)
+            })} catch {
+                print(error)
+        }
+    }
     
-    //    func dbConn(){
-    //        do{
-    //            db = try Connection("/Users/duc/Application Develop/Playtime/Playtime/ownContent.db")
-    //            print("===========DB CONNECTION SUCCESSFUL===========")
-    //        }
-    //        catch
-    //        {
-    //            print("===========DATABASE NOT FOUND===========")
-    //        }
-    //    }
-    
+    //get all content from table and store in a string array
     func getAll() -> [String]
     {
         do{
             for user in try db.prepare(dbIntern) {
                 
-                //print("id: \(user[id]), content: \(user[content])")
                 contentForTable.append(user[content]!)
-                // id: 1, name: Optional("Alice")
             }
-        print(contentForTable)} catch {
-                print("ERROR + \(error)")
+        } catch {
+            print("ERROR \(error)")
         }
         
         return contentForTable
     }
     
+    //insert content into table
     func insert(content_:String)
     {
         do {
@@ -56,12 +62,13 @@ class database{
         }
     }
     
+    //delete content from table
     func delete(content_: String)
     {
         let toDelete = dbIntern.filter(content == content_)
         do {
-            let rowid = try db.run(dbIntern.delete())
-            print("deleted: \(rowid)")
+            try db.run(toDelete.delete())
+            print("deleted: \(content_)")
         } catch {
             print("deletion failed: \(error)")
         }
